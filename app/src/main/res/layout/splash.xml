@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView android:id="@+id/splash_icon"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView android:id="@+id/splash_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="22dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="@string/splash_text"
+        android:gravity="center_horizontal"/>
+
+</RelativeLayout>
