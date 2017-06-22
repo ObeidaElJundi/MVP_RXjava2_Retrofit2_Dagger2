@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Imgur</string>
     <string name="tags_toolbar_title">Hot Tags</string>
-    <string name="empty">No data to display!</string>
+    <string name="empty">No images to display!</string>
     <string name="default_tag_name">TAG NAME</string>
     <string name="splash_text">Practicing MVP, RXjava 2, Retrofit 2, and Dependency Injection (Dagger 2)</string>
 </resources>

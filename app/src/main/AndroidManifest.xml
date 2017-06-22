@@ -17,6 +17,7 @@
         </activity>
 
         <activity android:name=".ImgurTags.ImgurTagsActivity"/>
+        <activity android:name=".ImgurTagImages.ImgurTagImagesActivity"/>
 
     </application>
 

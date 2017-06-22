@@ -1,9 +1,5 @@
 package com.coding4fun.imgur.model;
 
-import com.coding4fun.imgur.ImgurTags.ImgurTag;
-
-import java.util.List;
-
 import io.reactivex.Observable;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -38,7 +34,7 @@ public class ImgurService {
 
         @GET("gallery/r/{tag}/top/year/1")
         @Headers("Authorization: Client-ID 01e88c6fa81118c")
-        Observable<List<ImgurTag>> getImgurImagesByTag(@Path("tag") String tag); //TODO
+        Observable<ImgurTagImagesResponse> getImgurImagesByTag(@Path("tag") String tag); //TODO
 
     }
 

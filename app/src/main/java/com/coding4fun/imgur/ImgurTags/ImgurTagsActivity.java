@@ -1,5 +1,6 @@
 package com.coding4fun.imgur.ImgurTags;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
+import com.coding4fun.imgur.ImgurTagImages.ImgurTagImagesActivity;
 import com.coding4fun.imgur.R;
 
 import java.util.List;
@@ -107,7 +108,10 @@ public class ImgurTagsActivity extends AppCompatActivity implements ImgurTagsCon
 
     @Override
     public void openTagImagesActivity(ImgurTag tag) {
-        Toast.makeText(this, tag.getName() + " clicked :)", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, tag.getName() + " clicked :)", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ImgurTagImagesActivity.class);
+        intent.putExtra(ImgurTagImagesActivity.EXTRA_IMGUR_TAG,tag.getName());
+        startActivity(intent);
     }
 
 }

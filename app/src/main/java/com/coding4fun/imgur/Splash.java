@@ -24,7 +24,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by coding4fun on 21-Jun-17.
@@ -46,8 +45,9 @@ public class Splash extends AppCompatActivity {
         animateTextIn();
         disposable = Observable
                 .timer(3, TimeUnit.SECONDS) // emits 0L after a specified delay (3 seconds in this case)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                //.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()) //needed for Timer runs on computation thread by default
+                // (see: http://reactivex.io/documentation/scheduler.html). So to update UI, go back to mainThread.
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(@NonNull Long aLong) throws Exception {
@@ -106,6 +106,12 @@ public class Splash extends AppCompatActivity {
         anim.setStartOffset(222);
         anim.setInterpolator(new DecelerateInterpolator());
         splashText.startAnimation(anim);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        //do nothing
     }
 
     @Override
